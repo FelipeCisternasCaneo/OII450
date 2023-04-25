@@ -91,51 +91,6 @@ if fs:
                     cantidad +=experimentos
                     bd.insertarExperimentos(data, experimentos, instancia[0])
 
-if scp:
-    # poblar ejecuciones SCP
-    instancias = bd.obtenerInstancias(f'''
-                                      "scp41"
-                                      ''')
-    iteraciones = 100
-    experimentos = 1
-    poblacion = 10
-    for instancia in instancias:
-
-        for mh in mhs:
-            data = {}
-            data['MH']          = mh
-            data['paramMH']     = f'iter:{str(iteraciones)},pop:{str(poblacion)},DS:V4-ELIT,repair:complex'
-            data['ML']          = ''
-            data['paramML']     = ''
-            data['ML_FS']       = ''
-            data['paramML_FS']  = ''
-            data['estado']      = 'pendiente'
-
-            cantidad +=experimentos
-            bd.insertarExperimentos(data, experimentos, instancia[0])
-            
-if ben:
-    # poblar ejecuciones Benchmark
-    instancias = bd.obtenerInstancias(f'''
-                                      "F7","F8","F9","F10"
-                                      ''')
-    iteraciones = 500
-    experimentos = 31
-    poblacion = 30
-    for instancia in instancias:
-        for mh in mhs:
-            data = {}
-            data['MH']          = mh
-            data['paramMH']     = f'iter:{str(iteraciones)},pop:{str(poblacion)}'
-            data['ML']          = ''
-            data['paramML']     = ''
-            data['ML_FS']       = ''
-            data['paramML_FS']  = ''
-            data['estado']      = 'pendiente'
-
-            cantidad +=experimentos
-            bd.insertarExperimentos(data, experimentos, instancia[0])
-
 print("------------------------------------------------------------------")
 print(f'Se ingresaron {cantidad} experimentos a la base de datos')
 print("------------------------------------------------------------------")
