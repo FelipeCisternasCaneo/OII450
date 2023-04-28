@@ -1,7 +1,6 @@
 import numpy as np
 import os
 from Problem.FS.Problem import FeatureSelection as fs
-from Metaheuristics.GWO import iterarGWO 
 from Metaheuristics.SCA import iterarSCA
 from Metaheuristics.PSA import iterarPSA
 from Diversity.hussainDiversity import diversidadHussain
@@ -138,8 +137,6 @@ def solverFSML(id, mh, maxIter, pop, instancia, clasificador, parametrosC, param
         # print(poblacion)
         if mh == "SCA":
             poblacion = iterarSCA(maxIter, iter, instance.getTotalFeature(), poblacion.tolist(), Best.tolist())
-        if mh == "GWO":
-            poblacion = iterarGWO(maxIter, iter, instance.getTotalFeature(), poblacion.tolist(), fitness.tolist(), 'MIN')
         if mh == 'PSA':
             poblacion = iterarPSA(maxIter, iter, instance.getTotalFeature(), poblacion.tolist(), Best.tolist())
         

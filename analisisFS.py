@@ -62,91 +62,70 @@ for instancia in instancias:
     archivoMCC.write('MH,MCC\n')
 
     fitnessSCA = [] 
-    fitnessGWO = [] 
     fitnessPSA = []
 
     timeSCA = []
-    timeGWO = []
     timePSA = []
 
     xplSCA = [] 
-    xplGWO = [] 
     xplPSA = []
 
     xptSCA = []
-    xptGWO = []
     xptPSA = []
     
     tfsSCA = []
-    tfsGWO = []
     tfsPSA = []
     
     accuracySCA = []
-    accuracyGWO = []
     accuracyPSA = []
     
     f1ScoreSCA = []
-    f1ScoreGWO = []
     f1ScorePSA = []
     
     precisionSCA = []
-    precisionGWO = []
     precisionPSA = []
     
     recallSCA = []
-    recallGWO = []
     recallPSA = []
     
     mccSCA = []
-    mccGWO = []
     mccPSA = []
     
     errorRateSCA = []
-    errorRateGWO = []
     errorRatePSA = []
     
    
     # --------------------------------------------------------------------------------------- #
     
     bestFitnessSCA = []
-    bestFitnessGWO = []
     bestFitnessPSA = []
 
     bestTimeSCA = []
-    bestTimeGWO = []
     bestTimePSA = []
     
     bestTfsSCA = []
-    bestTfsGWO = []
     bestTfsPSA = []
     
     bestAccuracySCA = []
-    bestAccuracyGWO = []
     bestAccuracyPSA = []
 
     
     bestFscoreSCA = []
-    bestFscoreGWO = []
     bestFscorePSA = []
     
     bestPrecisionSCA = []
-    bestPrecisionGWO = []
     bestPrecisionPSA = []
     
     bestRecallSCA = []
-    bestRecallGWO = []
     bestRecallPSA = []
     
     bestMCCSCA = []
-    bestMCCGWO = []
     bestMCCPSA = []
     
     bestErrorRateSCA = []
-    bestErrorRateGWO = []
     bestErrorRatePSA = []
     
     bestDIVSCA = []
-    bestDIVGWO = []
     bestDIVPSA = []
 
     for d in blob:
@@ -213,23 +192,6 @@ for instancia in instancias:
             archivoFitness.write(f'SCA,{str(np.min(fitness))}\n')
             archivoAccuracy.write(f'SCA,{str(np.average(accuracy))}\n')
             archivoMCC.write(f'SCA,{str(np.average(mcc))}\n')
-        if mh == 'GWO':
-            fitnessGWO.append(fitness[ultimo])
-            timeGWO.append(np.round(np.sum(time),3))
-            xplGWO.append(np.round(np.mean(xpl), decimals=2))
-            xptGWO.append(np.round(np.mean(xpt), decimals=2))
-            tfsGWO.append(tfs[ultimo])
-            accuracyGWO.append(accuracy[ultimo])
-            f1ScoreGWO.append(f1Score[ultimo])
-            precisionGWO.append(precision[ultimo])
-            recallGWO.append(recall[ultimo])
-            mccGWO.append(mcc[ultimo])
-            errorRateGWO.append(errorRate[ultimo])
-            
-            
-            archivoFitness.write(f'GWO,{str(np.min(fitness))}\n')
-            archivoAccuracy.write(f'GWO,{str(np.average(accuracy))}\n')
-            archivoMCC.write(f'GWO,{str(np.average(mcc))}\n')
 
 
 
@@ -366,7 +328,7 @@ for instancia in instancias:
     # {np.min(fitnessPSA)},{np.round(np.average(fitnessPSA),3)},{np.round(np.std(fitnessPSA),3)}
     # {np.min(fitnessSCA)},{np.round(np.average(fitnessSCA),3)},{np.round(np.std(fitnessSCA),3)}
     # {np.min(fitnessWOA)},{np.round(np.average(fitnessWOA),3)},{np.round(np.std(fitnessWOA),3)}
-    archivoResumenFitness.write(f'''{problem},{np.min(fitnessGWO)},{np.round(np.average(fitnessGWO),3)},{np.round(np.std(fitnessGWO),3)},{np.min(fitnessPSA)},{np.round(np.average(fitnessPSA),3)},{np.round(np.std(fitnessPSA),3)},{np.min(fitnessSCA)},{np.round(np.average(fitnessSCA),3)},{np.round(np.std(fitnessSCA),3)}\n''')
+    archivoResumenFitness.write(f'''{problem},{np.min(fitnessPSA)},{np.round(np.average(fitnessPSA),3)},{np.round(np.std(fitnessPSA),3)},{np.min(fitnessSCA)},{np.round(np.average(fitnessSCA),3)},{np.round(np.std(fitnessSCA),3)}\n''')
     
     
     # {np.min(timeGWO)},{np.round(np.average(timeGWO),3)},{np.round(np.std(timeGWO),3)}
@@ -374,7 +336,7 @@ for instancia in instancias:
     # {np.min(timePSA)},{np.round(np.average(timePSA),3)},{np.round(np.std(timePSA),3)}
     # {np.min(timeSCA)},{np.round(np.average(timeSCA),3)},{np.round(np.std(timeSCA),3)}
     # {np.min(timeWOA)},{np.round(np.average(timeWOA),3)},{np.round(np.std(timeWOA),3)}    
-    archivoResumenTimes.write(f'''{problem},{np.min(timeGWO)},{np.round(np.average(timeGWO),3)},{np.round(np.std(timeGWO),3)},{np.min(timePSA)},{np.round(np.average(timePSA),3)},{np.round(np.std(timePSA),3)},{np.min(timeSCA)},{np.round(np.average(timeSCA),3)},{np.round(np.std(timeSCA),3)}\n''')
+    archivoResumenTimes.write(f'''{problem},{np.min(timePSA)},{np.round(np.average(timePSA),3)},{np.round(np.std(timePSA),3)},{np.min(timeSCA)},{np.round(np.average(timeSCA),3)},{np.round(np.std(timeSCA),3)}\n''')
     
     
     # {np.max(accuracyGWO)},{np.round(np.average(accuracyGWO),3)},{np.round(np.std(accuracyGWO),3)}
@@ -382,7 +344,7 @@ for instancia in instancias:
     # {np.max(accuracyPSA)},{np.round(np.average(accuracyPSA),3)},{np.round(np.std(accuracyPSA),3)}
     # {np.max(accuracySCA)},{np.round(np.average(accuracySCA),3)},{np.round(np.std(accuracySCA),3)}
     # {np.max(accuracyWOA)},{np.round(np.average(accuracyWOA),3)},{np.round(np.std(accuracyWOA),3)}
-    archivoResumenAccuracy.write(f'''{problem},{np.max(accuracyGWO)},{np.round(np.average(accuracyGWO),3)},{np.round(np.std(accuracyGWO),3)},{np.max(accuracyPSA)},{np.round(np.average(accuracyPSA),3)},{np.round(np.std(accuracyPSA),3)},{np.max(accuracySCA)},{np.round(np.average(accuracySCA),3)},{np.round(np.std(accuracySCA),3)}\n''')
+    archivoResumenAccuracy.write(f'''{problem},{np.max(accuracyPSA)},{np.round(np.average(accuracyPSA),3)},{np.round(np.std(accuracyPSA),3)},{np.max(accuracySCA)},{np.round(np.average(accuracySCA),3)},{np.round(np.std(accuracySCA),3)}\n''')
     
     
     # {np.max(f1ScoreGWO)},{np.round(np.average(f1ScoreGWO),3)},{np.round(np.std(f1ScoreGWO),3)}
@@ -390,7 +352,7 @@ for instancia in instancias:
     # {np.max(f1ScorePSA)},{np.round(np.average(f1ScorePSA),3)},{np.round(np.std(f1ScorePSA),3)}
     # {np.max(f1ScoreSCA)},{np.round(np.average(f1ScoreSCA),3)},{np.round(np.std(f1ScoreSCA),3)}
     # {np.max(f1ScoreWOA)},{np.round(np.average(f1ScoreWOA),3)},{np.round(np.std(f1ScoreWOA),3)}
-    archivoResumenFScore.write(f'''{problem},{np.max(f1ScoreGWO)},{np.round(np.average(f1ScoreGWO),3)},{np.round(np.std(f1ScoreGWO),3)},{np.max(f1ScorePSA)},{np.round(np.average(f1ScorePSA),3)},{np.round(np.std(f1ScorePSA),3)},{np.max(f1ScoreSCA)},{np.round(np.average(f1ScoreSCA),3)},{np.round(np.std(f1ScoreSCA),3)}\n''')
+    archivoResumenFScore.write(f'''{problem},{np.max(f1ScorePSA)},{np.round(np.average(f1ScorePSA),3)},{np.round(np.std(f1ScorePSA),3)},{np.max(f1ScoreSCA)},{np.round(np.average(f1ScoreSCA),3)},{np.round(np.std(f1ScoreSCA),3)}\n''')
     
     
     # {np.max(precisionGWO)},{np.round(np.average(precisionGWO),3)},{np.round(np.std(precisionGWO),3)}
@@ -398,7 +360,7 @@ for instancia in instancias:
     # {np.max(precisionPSA)},{np.round(np.average(precisionPSA),3)},{np.round(np.std(precisionPSA),3)}
     # {np.max(precisionSCA)},{np.round(np.average(precisionSCA),3)},{np.round(np.std(precisionSCA),3)}
     # {np.max(precisionWOA)},{np.round(np.average(precisionWOA),3)},{np.round(np.std(precisionWOA),3)}
-    archivoResumenPrecision.write(f'''{problem},{np.max(precisionGWO)},{np.round(np.average(precisionGWO),3)},{np.round(np.std(precisionGWO),3)},{np.max(precisionPSA)},{np.round(np.average(precisionPSA),3)},{np.round(np.std(precisionPSA),3)},{np.max(precisionSCA)},{np.round(np.average(precisionSCA),3)},{np.round(np.std(precisionSCA),3)}\n''')
+    archivoResumenPrecision.write(f'''{problem},{np.max(precisionPSA)},{np.round(np.average(precisionPSA),3)},{np.round(np.std(precisionPSA),3)},{np.max(precisionSCA)},{np.round(np.average(precisionSCA),3)},{np.round(np.std(precisionSCA),3)}\n''')
     
     
     # {np.max(recallGWO)},{np.round(np.average(recallGWO),3)},{np.round(np.std(recallGWO),3)}
@@ -406,7 +368,7 @@ for instancia in instancias:
     # {np.max(recallPSA)},{np.round(np.average(recallPSA),3)},{np.round(np.std(recallPSA),3)}
     # {np.max(recallSCA)},{np.round(np.average(recallSCA),3)},{np.round(np.std(recallSCA),3)}
     # {np.max(recallWOA)},{np.round(np.average(recallWOA),3)},{np.round(np.std(recallWOA),3)}
-    archivoResumenRecall.write(f'''{problem},{np.max(recallGWO)},{np.round(np.average(recallGWO),3)},{np.round(np.std(recallGWO),3)},{np.max(recallPSA)},{np.round(np.average(recallPSA),3)},{np.round(np.std(recallPSA),3)},{np.max(recallSCA)},{np.round(np.average(recallSCA),3)},{np.round(np.std(recallSCA),3)}\n''')
+    archivoResumenRecall.write(f'''{problem},{np.max(recallPSA)},{np.round(np.average(recallPSA),3)},{np.round(np.std(recallPSA),3)},{np.max(recallSCA)},{np.round(np.average(recallSCA),3)},{np.round(np.std(recallSCA),3)}\n''')
     
     
     # {np.max(mccGWO)},{np.round(np.average(mccGWO),3)},{np.round(np.std(mccGWO),3)}
@@ -414,7 +376,7 @@ for instancia in instancias:
     # {np.max(mccPSA)},{np.round(np.average(mccPSA),3)},{np.round(np.std(mccPSA),3)}
     # {np.max(mccSCA)},{np.round(np.average(mccSCA),3)},{np.round(np.std(mccSCA),3)}
     # {np.max(mccWOA)},{np.round(np.average(mccWOA),3)},{np.round(np.std(mccWOA),3)}
-    archivoResumenMCC.write(f'''{problem},{np.max(mccGWO)},{np.round(np.average(mccGWO),3)},{np.round(np.std(mccGWO),3)},{np.max(mccPSA)},{np.round(np.average(mccPSA),3)},{np.round(np.std(mccPSA),3)},{np.max(mccSCA)},{np.round(np.average(mccSCA),3)},{np.round(np.std(mccSCA),3)}\n''')
+    archivoResumenMCC.write(f'''{problem},{np.max(mccPSA)},{np.round(np.average(mccPSA),3)},{np.round(np.std(mccPSA),3)},{np.max(mccSCA)},{np.round(np.average(mccSCA),3)},{np.round(np.std(mccSCA),3)}\n''')
     
     
     # {np.min(errorRateGWO)},{np.round(np.average(errorRateGWO),3)},{np.round(np.std(errorRateGWO),3)}
@@ -422,7 +384,7 @@ for instancia in instancias:
     # {np.min(errorRatePSA)},{np.round(np.average(errorRatePSA),3)},{np.round(np.std(errorRatePSA),3)}
     # {np.min(errorRateSCA)},{np.round(np.average(errorRateSCA),3)},{np.round(np.std(errorRateSCA),3)}
     # {np.min(errorRateWOA)},{np.round(np.average(errorRateWOA),3)},{np.round(np.std(errorRateWOA),3)}
-    archivoResumenErrorRate.write(f'''{problem},{np.min(errorRateGWO)},{np.round(np.average(errorRateGWO),3)},{np.round(np.std(errorRateGWO),3)},{np.min(errorRatePSA)},{np.round(np.average(errorRatePSA),3)},{np.round(np.std(errorRatePSA),3)},{np.min(errorRateSCA)},{np.round(np.average(errorRateSCA),3)},{np.round(np.std(errorRateSCA),3)}\n''')
+    archivoResumenErrorRate.write(f'''{problem},{np.min(errorRatePSA)},{np.round(np.average(errorRatePSA),3)},{np.round(np.std(errorRatePSA),3)},{np.min(errorRateSCA)},{np.round(np.average(errorRateSCA),3)},{np.round(np.std(errorRateSCA),3)}\n''')
     
     
     # {np.round(np.average(tfsGWO),3)},{np.round(np.std(tfsGWO),3)}
@@ -430,7 +392,7 @@ for instancia in instancias:
     # {np.round(np.average(tfsPSA),3)},{np.round(np.std(tfsPSA),3)}
     # {np.round(np.average(tfsSCA),3)},{np.round(np.std(tfsSCA),3)}
     # {np.round(np.average(tfsWOA),3)},{np.round(np.std(tfsWOA),3)}
-    archivoResumenTFS.write(f'''{problem},{np.round(np.average(tfsGWO),3)},{np.round(np.std(tfsGWO),3)},{np.round(np.average(tfsPSA),3)},{np.round(np.std(tfsPSA),3)},{np.round(np.average(tfsSCA),3)},{np.round(np.std(tfsSCA),3)}\n''')
+    archivoResumenTFS.write(f'''{problem},{np.round(np.average(tfsPSA),3)},{np.round(np.std(tfsPSA),3)},{np.round(np.average(tfsSCA),3)},{np.round(np.std(tfsSCA),3)}\n''')
     
     
     # {np.round(np.average(xplGWO),3)},{np.round(np.average(xptGWO),3)}
@@ -438,7 +400,7 @@ for instancia in instancias:
     # {np.round(np.average(xplPSA),3)},{np.round(np.average(xptPSA),3)}
     # {np.round(np.average(xplSCA),3)},{np.round(np.average(xptSCA),3)}
     # {np.round(np.average(xplWOA),3)},{np.round(np.average(xptWOA),3)}
-    archivoResumenPercentage.write(f'''{problem},{np.round(np.average(xplGWO),3)},{np.round(np.average(xptGWO),3)},{np.round(np.average(xplPSA),3)},{np.round(np.average(xptPSA),3)},{np.round(np.average(xplSCA),3)},{np.round(np.average(xptSCA),3)}\n''')
+    archivoResumenPercentage.write(f'''{problem},{np.round(np.average(xplPSA),3)},{np.round(np.average(xptPSA),3)},{np.round(np.average(xplSCA),3)},{np.round(np.average(xptSCA),3)}\n''')
     
 
     
@@ -494,17 +456,6 @@ for instancia in instancias:
             bestMCCSCA          = mcc
             bestErrorRateSCA    = errorRate
             bestDIVSCA          = div
-        if mh == 'GWO':
-            bestFitnessGWO      = fitness
-            bestTimeGWO         = time
-            bestTfsGWO          = tfs
-            bestAccuracyGWO     = accuracy
-            bestFscoreGWO       = f1Score
-            bestPrecisionGWO    = precision
-            bestRecallGWO       = recall
-            bestMCCGWO          = mcc
-            bestErrorRateGWO    = errorRate
-            bestDIVGWO          = div
 
             
         fig , ax = plt.subplots()
@@ -532,7 +483,6 @@ for instancia in instancias:
     
     print("------------------------------------------------------------------------------------------------------------")
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestFitnessGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestFitnessSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestFitnessPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestFitnessMFO, color="m", label="MFO")
@@ -545,7 +495,6 @@ for instancia in instancias:
     print(f'Grafico de fitness realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestTimeGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestTimeSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestTimePSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestTimeMFO, color="m", label="MFO")
@@ -558,7 +507,6 @@ for instancia in instancias:
     print(f'Grafico de time realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestTfsGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestTfsSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestTfsPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestTfsMFO, color="m", label="MFO")
@@ -571,7 +519,6 @@ for instancia in instancias:
     print(f'Grafico de total feature selected realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestAccuracyGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestAccuracySCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestAccuracyPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestAccuracyMFO, color="m", label="MFO")
@@ -584,7 +531,6 @@ for instancia in instancias:
     print(f'Grafico de accuracy realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestFscoreGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestFscoreSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestFscorePSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestFscoreMFO, color="m", label="MFO")
@@ -597,7 +543,6 @@ for instancia in instancias:
     print(f'Grafico de f-score realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestPrecisionGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestPrecisionSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestPrecisionPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestPrecisionMFO, color="m", label="MFO")
@@ -610,7 +555,6 @@ for instancia in instancias:
     print(f'Grafico de precision realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestRecallGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestRecallSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestRecallPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestRecallMFO, color="m", label="MFO")
@@ -623,7 +567,6 @@ for instancia in instancias:
     print(f'Grafico de recall realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestMCCGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestMCCSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestMCCPSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestMCCMFO, color="m", label="MFO")
@@ -636,7 +579,6 @@ for instancia in instancias:
     print(f'Grafico de MCC realizado {problem} ')
     
     figPER, axPER = plt.subplots()
-    axPER.plot(iteraciones, bestErrorRateGWO, color="r", label="GWO")
     axPER.plot(iteraciones, bestErrorRateSCA, color="b", label="SCA")
     axPER.plot(iteraciones, bestErrorRatePSA, color="g", label="PSA")
     # axPER.plot(iteraciones, bestErrorRateMFO, color="m", label="MFO")

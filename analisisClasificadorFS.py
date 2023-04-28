@@ -19,43 +19,33 @@ dirResultado = './Resultados/'
 # --------------------------------------------------------------------------------------- #
     
 bestFitnessSCA = []
-bestFitnessGWO = []
 bestFitnessPSA = []
 
 bestTimeSCA = []
-bestTimeGWO = []
 bestTimePSA = []
 
 bestTfsSCA = []
-bestTfsGWO = []
 bestTfsPSA = []
 
 bestAccuracySCA = []
-bestAccuracyGWO = []
 bestAccuracyPSA = []
 
 bestFscoreSCA = []
-bestFscoreGWO = []
 bestFscorePSA = []
 
 bestPrecisionSCA = []
-bestPrecisionGWO = []
 bestPrecisionPSA = []
 
 bestRecallSCA = []
-bestRecallGWO = []
 bestRecallPSA = []
 
 bestMCCSCA = []
-bestMCCGWO = []
 bestMCCPSA = []
 
 bestErrorRateSCA = []
-bestErrorRateGWO = []
 bestErrorRatePSA = []
 
 bestDIVSCA = []
-bestDIVGWO = []
 bestDIVPSA = []
 
 print(instancias)
@@ -121,17 +111,6 @@ for instancia in instancias:
                 bestMCCSCA          = mcc
                 bestErrorRateSCA    = errorRate
                 bestDIVSCA          = div
-            if mh == 'GWO':
-                bestFitnessGWO      = fitness
-                bestTimeGWO         = time
-                bestTfsGWO          = tfs
-                bestAccuracyGWO     = accuracy
-                bestFscoreGWO       = f1Score
-                bestPrecisionGWO    = precision
-                bestRecallGWO       = recall
-                bestMCCGWO          = mcc
-                bestErrorRateGWO    = errorRate
-                bestDIVGWO          = div
                 
             fig , ax = plt.subplots()
             ax.plot(iteraciones,div)
@@ -159,7 +138,6 @@ for instancia in instancias:
             
         print("------------------------------------------------------------------------------------------------------------")
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestFitnessGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestFitnessSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestFitnessPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestFitnessMFO, color="m", label="MFO")
@@ -172,7 +150,6 @@ for instancia in instancias:
         print(f'Grafico de fitness realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestTimeGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestTimeSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestTimePSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestTimeMFO, color="m", label="MFO")
@@ -185,7 +162,6 @@ for instancia in instancias:
         print(f'Grafico de time realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestTfsGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestTfsSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestTfsPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestTfsMFO, color="m", label="MFO")
@@ -198,7 +174,6 @@ for instancia in instancias:
         print(f'Grafico de total feature selected realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestAccuracyGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestAccuracySCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestAccuracyPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestAccuracyMFO, color="m", label="MFO")
@@ -211,7 +186,6 @@ for instancia in instancias:
         print(f'Grafico de accuracy realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestFscoreGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestFscoreSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestFscorePSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestFscoreMFO, color="m", label="MFO")
@@ -224,7 +198,6 @@ for instancia in instancias:
         print(f'Grafico de f-score realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestPrecisionGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestPrecisionSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestPrecisionPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestPrecisionMFO, color="m", label="MFO")
@@ -237,7 +210,6 @@ for instancia in instancias:
         print(f'Grafico de precision realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestRecallGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestRecallSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestRecallPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestRecallMFO, color="m", label="MFO")
@@ -250,7 +222,6 @@ for instancia in instancias:
         print(f'Grafico de recall realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestMCCGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestMCCSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestMCCPSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestMCCMFO, color="m", label="MFO")
@@ -263,7 +234,6 @@ for instancia in instancias:
         print(f'Grafico de MCC realizado {problema} ')
         
         figPER, axPER = plt.subplots()
-        axPER.plot(iteraciones, bestErrorRateGWO, color="r", label="GWO")
         axPER.plot(iteraciones, bestErrorRateSCA, color="b", label="SCA")
         axPER.plot(iteraciones, bestErrorRatePSA, color="g", label="PSA")
         # axPER.plot(iteraciones, bestErrorRateMFO, color="m", label="MFO")
