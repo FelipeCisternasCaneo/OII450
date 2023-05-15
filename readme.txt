@@ -12,5 +12,5 @@ En el archivo "poblarDB.py" pueden realizar este paso. Podrán elegir lo siguien
 Una vez cargada la información a la bases de datos, deben ejecutar el archivo "main.py"
 Este archivo trae un experimento de la base de datos y lo ejecutado
 
-Ustedes deben incorporar su metaheuristica ("suMH.py") en la carpeta "Metaheuristics" y importarlo en el archivo "solverFS.py"
+Ustedes deben incorporar su metaheuristica ("suMH.py") en la carpeta "Metaheuristics" e importarlo en el archivo "solverFS.py"
 
